@@ -86,12 +86,12 @@ print(df.shape)
 
 
 for index, row in df.iterrows():
-    a = row['filename']
+    a = row['filename\tscene_label']
     b = a.split("/" )
     
-    #myList = [i.split('\t')[0] for i in b] 
+    myList = [i.split('\t')[0] for i in b] 
     
-    ref_file = os.path.splitext(b[1])[0]
+    ref_file = os.path.splitext(myList[1])[0]
     #print(ref_file)
    
     for filename in os.listdir(src_1):
